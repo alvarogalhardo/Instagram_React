@@ -179,7 +179,7 @@
   .post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .usuario ion-icon, .usuario > img, .conteudo > img {
     cursor: pointer;
   }
-  
+
   .post .conteudo img {
     width: 100%;
   }
@@ -191,6 +191,14 @@
     font-size: 24px;
   }
   
+  ion-icon[name=heart]{
+    color:#f00;
+  }
+
+  ion-icon[name=bookmark]{
+    color: #262626
+  }
+
   .post .fundo .acoes div:first-child ion-icon {
     margin-right: 6px;
   }

@@ -1,5 +1,54 @@
+import React from "react";
+
 export default function Posts() {
   function Post(props) {
+    const [likes, setLikes] = React.useState(props.likes);
+    let liked = false;
+    
+
+    function wasLiked() {
+      if (liked) {
+        unlike();
+      } else {
+        like();
+      }
+    }
+
+    function like() {
+      liked = true;
+      setLikes(props.likes + 1);
+      setNm("heart");
+      console.log(liked);
+    }
+
+    function unlike() {
+      liked = false;
+      setLikes(props.likes);
+      setNm("heart-outline");
+      liked = false;
+      console.log(liked);
+    }
+
+    const [nmLike, setNm] = React.useState("heart-outline");
+    const [nmSave, setNmSave] = React.useState("bookmark-outline");
+    let saved = false;
+
+    function wasSaved() {
+      if (saved) {
+        unsave();
+      } else {
+        save();
+      }
+    }
+
+    function save() {
+      setNmSave("bookmark");
+      saved = true;
+    }
+    function unsave() {
+      setNmSave("bookmark-outline");
+      saved = false;
+    }
     return (
       <div class="post">
         <div class="topo">
@@ -19,12 +68,12 @@ export default function Posts() {
         <div class="fundo">
           <div class="acoes">
             <div>
-              <ion-icon name="heart-outline"></ion-icon>
+              <ion-icon name={nmLike} onClick={wasLiked}></ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
             <div>
-              <ion-icon name="bookmark-outline"></ion-icon>
+              <ion-icon name={nmSave} onClick={wasSaved}></ion-icon>
             </div>
           </div>
 
@@ -32,7 +81,7 @@ export default function Posts() {
             <img src={props.liked} />
             <div class="texto">
               Curtido por <strong>{props.likedUser}</strong> e {""}
-              <strong>{props.likes}</strong>
+              <strong> outras {likes} pessoas</strong>
             </div>
           </div>
         </div>
@@ -47,7 +96,7 @@ export default function Posts() {
       post: "assets/img/gato-telefone.svg",
       liked: "assets/img/respondeai.svg",
       likedUser: "respondeai",
-      likes: "outras 101.523 pessoas",
+      likes: 101523,
     },
     {
       user: "barked",
@@ -55,7 +104,7 @@ export default function Posts() {
       post: "assets/img/dog.svg",
       liked: "assets/img/adorable_animals.svg",
       likedUser: "adorable_animals",
-      likes: "outras 99.159 pessoas",
+      likes: 99159,
     },
   ];
 
