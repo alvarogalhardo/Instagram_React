@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto','sans-serif';
+}
+.content {
+
+    width: 70vw;
+    height: 80vh;
+    margin: 10px auto;
+}
+
+.hangman img {
+    height: 400px;
+    width: 350px;
+}
+
+.hangman {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+}
+
+.choose-word{
+    background-color: #53AF60;
+    color: white;
+    border-radius: 5px;
+    height: 50px;
+    width: 170px;
+    font-weight: 400;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+.word {
+    font-weight: 700;
+    font-size: 40px;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+}
+
+.letters {
+    display: flex;
+    flex-wrap: wrap;
+  
+    padding: 5px 60px;
+    margin-top: 20px;
+}
+
+.unusable {
+    background-color: #9FAAB5;
+    height: 35px;
+    width: 35px;
+    border: 1px solid #9FAAB5;
+    margin: 5px 5px; 
+    color: #575757;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700 ;
+    border-radius: 3px;
+}
+
+.usable{
+    background-color: #B2CDE0;
+    height: 35px;
+    width: 35px;
+    border: 1px solid #39739D;
+    margin: 5px 5px; 
+    color: #39739D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700 ;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.guessarea {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.guess-box {
+    height: 30px;
+    width: 400px;
+    background-color: white;
+    border: 3px solid #39739D;
+    border-radius: 5px;
+}
+
+.guess-button {
+    border-radius: 5px;
+    background-color: #B2CDE0;
+    color:#39739D;
+    font-size: 20px;
+    font-weight: 700;
+}
